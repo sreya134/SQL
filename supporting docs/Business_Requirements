@@ -89,7 +89,14 @@ Late deliveries and fulfillment delays harm customer experience. Operational met
 **SQL Support:**
 - `fact_sales` (date fields: `order_date`, `shipping_date`, `due_date`)
 
----
+From this, you can calculate:
+
+Order Processing Time = shipping_date - order_date
+
+Shipping Delay = due_date - shipping_date
+
+Overall Fulfillment Time = due_date - order_date
+
 
 ## ✅ Summary: Data That Drives Action
 
