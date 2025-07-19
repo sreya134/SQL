@@ -1,1 +1,108 @@
+🎯 Business Goals from SQL Data Analytics Project  
+*Turning Data into Insights for Smarter Decisions*
 
+This project simulates a real-world retail or e-commerce analytics system. Using SQL scripts, fact/dimension modeling, and Power BI, we derive clear business goals to drive performance and decision-making.
+
+---
+
+## 💰 1. Increase Revenue Across Product Lines  
+**Why it matters:**  
+Sales growth is often driven by a few top-performing products. Identifying them helps focus marketing, stock, and pricing strategies.
+
+**What we analyzed:**
+- Top-selling products and categories
+- High vs. mid vs. low performers
+
+**SQL Support:**
+- `05_magnitude_analysis.sql`
+- `06_ranking_analysis.sql`
+- `13_report_products.sql`
+
+---
+
+## 🧍‍♀️ 2. Improve Customer Retention and Loyalty  
+**Why it matters:**  
+Keeping loyal customers is more cost-effective than acquiring new ones. Analyzing behavior and segmentation supports retention strategies.
+
+**What we analyzed:**
+- VIP vs. Regular vs. New customers
+- Recency, frequency, and spend behavior
+
+**SQL Support:**
+- `10_data_segmentation.sql`
+- `12_report_customers.sql`
+
+---
+
+## 📦 3. Optimize Product Portfolio  
+**Why it matters:**  
+Not all products are worth the same. Some should be promoted; others discontinued. Understanding product health enables smarter merchandising.
+
+**What we analyzed:**
+- Lifespan and recency of product sales
+- Average monthly revenue and pricing
+
+**SQL Support:**
+- `13_report_products.sql`
+
+---
+
+## 📈 4. Track Sales Performance Over Time  
+**Why it matters:**  
+Trends help detect seasonality, growth, or sudden drops. Time-based analysis enables proactive decisions.
+
+**What we analyzed:**
+- Monthly trends (MoM, YoY)
+- Cumulative revenue over time
+- Actual vs. target performance
+
+**SQL Support:**
+- `07_change_over_time_analysis.sql`
+- `08_cumulative_analysis.sql`
+- `09_performance_analysis.sql`
+
+---
+
+## 🧠 5. Understand Customer Segments  
+**Why it matters:**  
+Different customer types behave differently. Segmentation allows for tailored messaging and optimized product targeting.
+
+**What we analyzed:**
+- Demographics (age, country, gender)
+- Purchase patterns by segment
+
+**SQL Support:**
+- `02_dimensions_exploration.sql`
+- `10_data_segmentation.sql`
+- `12_report_customers.sql`
+
+---
+
+## 🚚 6. Monitor Operational Health  
+**Why it matters:**  
+Late deliveries and fulfillment delays harm customer experience. Operational metrics ensure smooth backend processes.
+
+**What we analyzed:**
+- Order, shipping, and due dates
+- Delivery timelines (can be extended)
+
+**SQL Support:**
+- `fact_sales` (date fields: `order_date`, `shipping_date`, `due_date`)
+
+---
+
+## ✅ Summary: Data That Drives Action
+
+| Goal                    | What It Helps You Do                        | Key SQL Scripts                     |
+|------------------------|---------------------------------------------|-------------------------------------|
+| 💰 Increase Revenue     | Spot best products and boost sales          | Magnitude, Ranking, Product Report  |
+| 🧍‍♀️ Boost Retention    | Nurture valuable customers                  | Customer Report, Segmentation       |
+| 📦 Manage Inventory     | Streamline product catalog                  | Product Report, Dimensions          |
+| 📈 Track Performance    | Monitor trends and outcomes                 | Change Over Time, Cumulative        |
+| 🧠 Know Your Customer   | Personalize strategies and campaigns        | Segmentation, Dimensions            |
+| 🚚 Improve Operations   | Detect inefficiencies in fulfillment        | Date logic in `fact_sales`          |
+
+---
+
+🔍 *Remember:* Every SQL script you write is a way to answer a business question.  
+🎯 *Goal-oriented analysis* is what turns a good data analyst into a strategic partner.
