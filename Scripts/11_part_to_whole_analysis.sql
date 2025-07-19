@@ -29,3 +29,9 @@ SELECT
     ROUND((CAST(total_sales AS FLOAT) / SUM(total_sales) OVER ()) * 100, 2) AS percentage_of_total
 FROM category_sales
 ORDER BY total_sales DESC;
+
+
+
+--"To identify key revenue drivers and their contribution to overall performance. 
+For example, in this case, 96% of revenue comes from Bikes. 
+That tells me our business is highly dependent on a single category, which can guide marketing, inventory, and diversification strategies."
