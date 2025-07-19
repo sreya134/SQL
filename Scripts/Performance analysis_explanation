@@ -1,0 +1,61 @@
+This SQL query and its output represent Product-Level Performance Analysis using Window Functions.
+It's an advanced form of trend and variance detection that helps you answer:
+
+🧠 “Which products are performing above or below average?”
+🔁 “How is each product performing this year vs. last year?”
+🔍 Breakdown of What This SQL Is Doing:
+
+1. AVG(current_sales) OVER (PARTITION BY product_name) → avg_sales
+Calculates the average sales for each product across all years.
+
+2. Difference from Average
+
+current_sales - AVG(current_sales) OVER (...) AS diff_avg
+Shows how current year sales compare to product's historical average.
+
+Then categorizes the difference:
+
+CASE
+  WHEN diff_avg > 0 THEN 'Above Avg'
+  WHEN diff_avg < 0 THEN 'Below Avg'
+  ELSE 'Avg'
+END AS avg_change
+
+3. Year-over-Year (YoY) Comparison with LAG()
+
+LAG(current_sales) OVER (PARTITION BY product_name ORDER BY order_year)
+Retrieves last year’s sales (py_sales) for the same product.
+
+Calculates:
+
+YoY difference: diff_py
+
+Change Label: Increase / Decrease / No Change
+
+📊 Why This Analysis Is Important
+✅ For Product Managers, Sales, or Executives:
+Insight Type	          Business Benefit
+🔺 Above/Below Avg	    Quickly flags over- and under-performers relative to their norm
+🔁 YoY Comparison	      Understand growth/decline patterns over time
+🚨 Early Warning	      Spot deteriorating products before they fail
+💰 Prioritization	      Invest in high-growth or consistently top-performing SKUs
+
+🧠 Example Interpretations from Output:
+Product Name	          Year	Sales	avg_change	py_change
+All-Purpose Bike Stand	2012	159  	Below Avg	  No Change
+All-Purpose Bike Stand	2013	37683	Above Avg	🔺 Increase
+All-Purpose Bike Stand	2014	50421	Above Avg	🔻 Decrease
+
+📌 Conclusion: Although 2014 sales are still above average, they declined from 2013, 
+suggesting a potential downward trend worth monitoring.
+
+Interview-Worthy Takeaway
+If asked:
+
+"Why would you use window functions in product sales analysis?"
+
+"Window functions let me compare each product's performance to its own history and the broader product catalog. 
+By analyzing differences from average and year-over-year trends,
+I can detect growth, decline, and consistency patterns, helping the business allocate marketing, inventory, and 
+pricing strategies more effectively."
+
